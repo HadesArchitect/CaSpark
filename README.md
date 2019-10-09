@@ -1,5 +1,5 @@
-# Cassandra + Spark = ❤️ 
 # Machine Learning with Apache Spark & Cassandra
+## Cassandra + Spark = ❤️ 
 
 A Hands-on Lab delivered by DataStax' Developer Advocates team. Want to learn the awesomness of distributed databases and computational systems? Jump in, watch the slides and do the practicals steps!
 
