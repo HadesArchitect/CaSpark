@@ -29,3 +29,7 @@ docker-compose up -d
 - For the Spark labs, access Jupyter Notebooks:   http://localhost:8888 password: `datastax`
 
 You may need to use some custom IP instead of localhost if you use docker-for-mac, docker-for-windows or similar installation.
+
+### Known Issues
+
+In some cases executing the exercises may lead to memory issues, especially on weaker or non-Linux machines due to docker limitations on memory. If you have any issues with exercises after the first few, try to clean up and start again `docker-compose kill && docker-compose down && docker-compose up -d`. You may need to repeat steps of the notebook you were working on.
