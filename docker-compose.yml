@@ -1,14 +1,23 @@
 version: '3'
 services:
-  dse: # DataStax Enterprise Database
+  dse: # DataStax Enterprise Database (Apache Cassandra-based Platform)
     image: datastax/dse-server:6.7.4
     command: [ -s -k ] # Run with Search and Analytics capabilities enabled
     environment:
       DS_LICENSE: accept # Accept licence on start
+      JVM_EXTRA_OPTS: -Xmx2g -Xms2g 
     cap_add:
       - IPC_LOCK # Allow DSE to lock memory with mlock
     ulimits:
       memlock: -1 # Lock memory
+    ports:
+      - "4040:4040"
+      - "7080:7080"
+      - "7081:7081"
+      - "8983:8983"
+      - "9042:9042"
+      - "9077:9077"
+      - "10000:10000"
   jupyter: 
     image: hadesarchitect/jupyter-pyspark-cassandra
     volumes:
@@ -17,6 +26,7 @@ services:
       - "8888:8888" # Exposes port to be available externally
     environment:
       PYSPARK_SUBMIT_ARGS: '--packages datastax:spark-cassandra-connector:2.4.0-s_2.11 --conf spark.cassandra.connection.host=dse pyspark-shell'
+    command: start-notebook.sh --NotebookApp.password='sha1:a536879cf56d:a895a85b375e09f7d6a8211cdcd0e87f16aa4e60'
   studio:  # Datastax Studio is a web interface for the Apache Cassandra or DataStax Enterprise
     image: datastax/dse-studio:6.7.0
     volumes:
