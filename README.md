@@ -25,7 +25,7 @@ docker-compose up -d
 
 ### Usage
 
-For the Cassandra labs, access DataStaxs Studio: http://localhost:9091
-For the Spark labs, access Jupyter Notebooks:   http://localhost:8888 password: `datastax`
+- For the Cassandra labs, access DataStaxs Studio: http://localhost:9091
+- For the Spark labs, access Jupyter Notebooks:   http://localhost:8888 password: `datastax`
 
 You may need to use some custom IP instead of localhost if you use docker-for-mac, docker-for-windows or similar installation.
