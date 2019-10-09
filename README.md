@@ -11,9 +11,9 @@ A Hands-on Lab delivered by DataStax' Developer Advocates team. Want to learn th
 
 ### Reqs
 
+- git
 - docker
 - docker-compose
-- browser
 
 ### Installation
 
@@ -27,3 +27,5 @@ docker-compose up -d
 
 For the Cassandra labs, access DataStaxs Studio: http://localhost:9091
 For the Spark labs, access Jupyter Notebooks:   http://localhost:8888 password: `datastax`
+
+You may need to use some custom IP instead of localhost if you use docker-for-mac, docker-for-windows or similar installation.
