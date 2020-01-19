@@ -19,7 +19,7 @@ services:
       - "9077:9077"
       - "10000:10000"
   jupyter: 
-    image: hadesarchitect/jupyter-pyspark-cassandra
+    build: ./pyspark-cassandra
     volumes:
       - ./jupyter:/home/jovyan
     ports:
