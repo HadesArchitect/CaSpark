@@ -6,7 +6,7 @@ A Hands-on Lab delivered by DataStax' Developer Advocates team. Want to learn th
 ## Slides
 
 * [CodeLabs Cassandra+Spark](./slides/CodeLabs_Cassandra.pdf)
-* [Introduction to Machine Learning with Apache Cassandra and Apache Spark](./slides/Intro to ML with C_ and Spark.pdf)
+* [Introduction to Machine Learning with Apache Cassandra and Apache Spark](./slides/Intro%20to%20ML%20with%20C_%20and%20Spark.pdf)
 
 ## Labs
 
