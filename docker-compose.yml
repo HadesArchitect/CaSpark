@@ -1,6 +1,6 @@
 version: '3'
 services:
-  dse: # DataStax Enterprise Database (Apache Cassandra-based Platform)
+  dse: # DataStax Enterprise (Apache Cassandra + Apache Spark + much more)
     image: datastax/dse-server:6.7.4
     command: [ -s -k ] # Run with Search and Analytics capabilities enabled
     environment:
@@ -18,7 +18,7 @@ services:
       - "9042:9042"
       - "9077:9077"
       - "10000:10000"
-  jupyter: 
+  jupyter: # Jupyter Notebook
     build: ./pyspark-cassandra
     volumes:
       - ./jupyter:/home/jovyan
@@ -27,7 +27,7 @@ services:
     environment:
       PYSPARK_SUBMIT_ARGS: '--packages datastax:spark-cassandra-connector:2.4.0-s_2.11 --conf spark.cassandra.connection.host=dse pyspark-shell'
     command: start-notebook.sh --NotebookApp.password='sha1:a536879cf56d:a895a85b375e09f7d6a8211cdcd0e87f16aa4e60'
-  studio:  # Datastax Studio is a web interface for the Apache Cassandra or DataStax Enterprise
+  studio:  # Web interface for the Apache Cassandra and DataStax Enterprise
     image: datastax/dse-studio:6.7.0
     volumes:
       - ./dse-studio/connections:/var/lib/datastax-studio/connections/admin
